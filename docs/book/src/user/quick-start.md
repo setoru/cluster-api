@@ -597,8 +597,8 @@ Please visit the [Hivelocity project][Hivelocity provider].
 
 ```bash
 # Please ensure that the values for `CLOUD_SDK_AK` and `CLOUD_SDK_SK` are base64 encoded.
-export CLOUD_SDK_AK=$( echo $AccessKey | base64 | tr -d '\n' )
-export CLOUD_SDK_SK=$( echo $SecretKey | base64 | tr -d '\n' )
+export CLOUD_SDK_AK=$( echo -n "$AccessKey" | base64 | tr -d '\n' )
+export CLOUD_SDK_SK=$( echo -n "$SecretKey" | base64 | tr -d '\n' )
 
 # Finally, initialize the management cluster
 clusterctl init --infrastructure huawei
@@ -1141,7 +1141,7 @@ See the [Harvester provider] for more information.
 
 ```bash
 # huawei cloud region
-export HC_REGION="cn-east-1"
+export HC_REGION="ap-southeast-1"
 # ECS SSH key name
 export HC_SSH_KEY_NAME="default"
 # kubernetes version
@@ -1151,11 +1151,11 @@ export CONTROL_PLANE_MACHINE_COUNT="1"
 # number of worker machines
 export WORKER_MACHINE_COUNT="1"
 # control plane machine type
-export HC_CONTROL_PLANE_MACHINE_TYPE="x1e.2u.4g"
+export HC_CONTROL_PLANE_MACHINE_TYPE="x1.2u.4g"
 # worker node machine type
-export HC_NODE_MACHINE_TYPE="x1e.2u.4g"
+export HC_NODE_MACHINE_TYPE="x1.2u.4g"
 # ECS image ID
-export ECS_IMAGE_ID="218ca5t7-bxf3-5dg0-852p-y703c9fe1a52"
+export ECS_IMAGE_ID="4e98ff86-1c31-4ede-997c-44c39e618fd3"
 ```
 
 See the [Huawei Cloud provider] for more information.
